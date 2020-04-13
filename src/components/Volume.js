@@ -25,9 +25,7 @@ const useStyles = makeStyles({
 
 const Volume = (props) => {
   const classes = useStyles();
-  const valueText = () => {
-  
-  }
+
 
 return (
   
@@ -41,7 +39,7 @@ return (
     <Slider
         defaultValue={30}
         onChange={props.handleSliderVolume}
-        getAriaValueText={valueText}
+        // getAriaValueText={valueText}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
         step={10}

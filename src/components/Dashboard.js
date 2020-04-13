@@ -13,25 +13,39 @@ class Dashboard extends React.Component {
   }
 
 
+updateNotifications() {
+  let notifications = [];
+  if(!this.state.online) {
+    notifications.push('our application is offline. You wont be able to share or stream music to other devices.')
+  }
+  if(this.state.volume > 80) {
+    notifications.push('Listening to music at a high volume could cause long-term hearing loss.')
+  }
+  if(this.state.quality === 'low') {
+    notifications.push('Music quality is degraded. Increase quality if your connection allows it.')
+  }
+  return notifications
+}
+
 handleChangeOnline(event) {
   console.log(event)
   this.setState({online: !this.state.online})
 }
 
-handleSliderVolume(event, target) {
-  if(target > 80)
-  this.setState({notifications: 'Listening to music at a high volume could cause long-term hearing loss.'})
+handleSliderVolume(event, volume) {
+  this.setState({volume: volume})
 }
 
-
 handleQualitySelector(event) {
-
+  console.log(event.target.value)
+  this.setState({quality: event.target.value})
 }
  
 
 
   render() {
-    let offline = !this.state.online
+    const notifications = this.updateNotifications()
+
   return (
     
     <div>
@@ -41,9 +55,13 @@ handleQualitySelector(event) {
       <Quality handleQualitySelector={this.handleQualitySelector.bind(this)}/>
       <div>
         <h2>System Notifications:</h2>
-        {offline && 
-        <div>Your application is offline. You wont be able to share or stream music to other devices.</div>}
-        {}
+        <div>
+        {notifications.map((message, index) => {
+          return (<div key={index}>
+            {message}
+          </div>)
+        })}
+        </div>
       </div>
     </div>
   )
