@@ -1,12 +1,21 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextFIeld'
 import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  // const useStyles = makeStyles((theme) => ({
+  //   root: {
+  //     '& > *': {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  // }));
 
   handleSubmit(event) {
    
@@ -21,7 +30,7 @@ class Login extends React.Component {
         direction="center"
         justify="center"
         alignItems="center">
-        <form onSubmit={this.props.loginFunc}>
+        <form>
           <div>
           <TextField id="standard-basic" label="First Name *" />
           </div>
@@ -29,7 +38,9 @@ class Login extends React.Component {
           <TextField id="standard-basic" label="Last Name *" />
           </div>
           <div>
-          <input type="submit" value="Login"/>
+          <Button onClick={this.props.loginFunc} variant="contained" color="primary">
+            Login
+          </Button>
           </div>
         </form>
       </Grid>
