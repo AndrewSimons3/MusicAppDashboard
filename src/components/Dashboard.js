@@ -19,12 +19,8 @@ handleChangeOnline(event) {
 }
 
 handleSliderVolume(event, target) {
-  target >= 80 && 
-  this.setState({
-    notifications: [...this.state.notifications, 
-      "Listening to music at a high volume could cause long-term hearing loss."]
-  });
-  this.setState({ volume: target});
+  if(target > 80)
+  this.setState({notifications: 'Listening to music at a high volume could cause long-term hearing loss.'})
 }
 
 
@@ -47,6 +43,7 @@ handleQualitySelector(event) {
         <h2>System Notifications:</h2>
         {offline && 
         <div>Your application is offline. You wont be able to share or stream music to other devices.</div>}
+        {}
       </div>
     </div>
   )
