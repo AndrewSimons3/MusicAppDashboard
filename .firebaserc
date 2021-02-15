@@ -1,5 +1,6 @@
 {
   "projects": {
     "default": "music-dashboard-app",
+    "music": "music-dashboard-app"
   }
 }
