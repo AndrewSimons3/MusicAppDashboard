@@ -1,7 +1,7 @@
 import React from 'react';
-import Online from '../components/Online'
-import Quality from '../components/Quality'
-import Volume from '../components/Volume'
+import Online from './Online'
+import Quality from './Quality'
+import Volume from './Volume'
 // import Volume from '../components/Volume'
 
 class Dashboard extends React.Component {
