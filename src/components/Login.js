@@ -7,23 +7,16 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 
+
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // const useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     '& > *': {
-  //       margin: theme.spacing(1),
-  //     },
-  //   },
-  // }));
-
   handleSubmit(event) {
-   
-    
+      
   }
 
   render() {
@@ -33,7 +26,6 @@ class Login extends React.Component {
         variant="outlined"
         margin="normal"
         required
-        fullWidth
         id="email"
         label="Email Address"
         name="email"
@@ -44,7 +36,6 @@ class Login extends React.Component {
         variant="outlined"
         margin="normal"
         required
-        fullWidth
         name="password"
         label="Password"
         type="password"
